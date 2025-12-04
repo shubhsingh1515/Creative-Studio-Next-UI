@@ -44,7 +44,7 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "I've increased Signature Club in 1 Million views within my first 3 months, and to be totally honest, I NEVER in a MILLION years did I think it was a legitimate thing. I thought maybe a large outlet/site or it's people who'd literally dedicated their ENTIRE life to...",
+        "I've increased Ardent & Leap Club in 1 Million views within my first 3 months, and to be totally honest, I NEVER in a MILLION years did I think it was a legitimate thing. I thought maybe a large outlet/site or it's people who'd literally dedicated their ENTIRE life to...",
       name: "Sam Reynolds",
       role: "Property Manager at Property Plus",
       image:
@@ -52,7 +52,7 @@ export function TestimonialsSection() {
     },
     {
       quote:
-        "Building and keeping trust with clients is what we do best. We make sure every interaction strengthens your relationships and encourages long-term loyalty. Thanks to Signature Club.",
+        "Building and keeping trust with clients is what we do best. We make sure every interaction strengthens your relationships and encourages long-term loyalty. Thanks to Ardent & Leap.",
       name: "Emma Turner",
       role: "Sales Manager at FreshStart",
       image:
@@ -60,7 +60,7 @@ export function TestimonialsSection() {
     },
     {
       quote:
-        "The best part about Signature Club is how they combine creativity with strategy. They don't just create content; they create content that converts. Our engagement has skyrocketed!",
+        "The best part about Ardent & Leap is how they combine creativity with strategy. They don't just create content; they create content that converts. Our engagement has skyrocketed!",
       name: "Michael Chen",
       role: "CEO at TechFlow",
       image:
@@ -68,7 +68,7 @@ export function TestimonialsSection() {
     },
     {
       quote:
-        "Partnering with Signature Club has been a complete game-changer for us. Honestly, execution and planning is the hard part, working with them is the easy part!",
+        "Partnering with Ardent & Leap has been a complete game-changer for us. Honestly, execution and planning is the hard part, working with them is the easy part!",
       name: "Oliver Martinez",
       role: "CMO at Peak Performance",
       image:

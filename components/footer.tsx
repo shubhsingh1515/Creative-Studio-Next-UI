@@ -31,7 +31,7 @@ export function Footer() {
 
           {/* TEXT */}
           <p className="text-gray-300 leading-relaxed text-[15px]">
-            Signature Club specialises in creating viral content that cuts
+            Ardent & Leap specialises in creating viral content that cuts
             through digital noise and makes an impact. Our expert team drives
             real, measurable growth and turns your brand into a sensation.
           </p>
@@ -108,7 +108,7 @@ export function Footer() {
 
       {/* BOTTOM COPYRIGHT */}
       <div className="max-w-7xl mx-auto flex justify-between items-center text-gray-400 text-sm">
-        <p>© Signature Club 2025. All rights reserved</p>
+        <p>© Ardent & Leap 2025. All rights reserved</p>
 
         {/* small icon right bottom */}
         <svg

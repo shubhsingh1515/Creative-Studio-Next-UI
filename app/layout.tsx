@@ -7,7 +7,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Signature Club - Social Media Marketing",
+  title: "Ardent & Leap - Social Media Marketing",
   description:
     "Your Gateway to Creative Excellence. Unlock Rapid Social Media Growth with Viral Content That Gets Results",
   generator: "v0.app",

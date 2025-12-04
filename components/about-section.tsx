@@ -73,7 +73,7 @@ export function AboutSection() {
           className="text-center"
         >
           <h2 className="text-3xl md:text-5xl font-normal mb-6">
-            Signature Club specialises in{" "}
+            Ardent & Leap specialises in{" "}
             <a href="#" className="text-blue-600 font-medium">
               creating content
             </a>{" "}
