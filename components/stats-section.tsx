@@ -18,35 +18,45 @@ export function StatsSection() {
     { value: "300", suffix: "+", label: "Viral Campaigns", color: "from-blue-600 to-blue-400" },
   ]
 
-  useEffect(() => {
-    if (sectionRef.current && !hasAnimated) {
-      const ctx = gsap.context(() => {
-        stats.forEach((_, index) => {
-          const element = document.querySelector(`#stat-${index}`)
-          if (element) {
-            ScrollTrigger.create({
-              trigger: sectionRef.current,
-              start: "top 70%",
-              onEnter: () => {
-                const stat = stats[index]
-                const endValue = Number.parseFloat(stat.value)
-                gsap.to(element, {
-                  innerHTML: endValue,
-                  duration: 2,
-                  snap: { innerHTML: stat.value.includes(".") ? 0.1 : 1 },
-                  ease: "power1.out",
-                })
-                setHasAnimated(true)
-              },
-              once: true,
-            })
-          }
-        })
-      })
+useEffect(() => {
+  if (!sectionRef.current || hasAnimated) return;
 
-      return () => ctx.revert()
-    }
-  }, [hasAnimated])
+  const triggers: ScrollTrigger[] = [];
+
+  stats.forEach((stat, index) => {
+    const element = document.getElementById(`stat-${index}`);
+
+    if (!element) return;
+
+    const endValue = parseFloat(stat.value);
+
+    const trigger = ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: "top 80%",
+      once: true,
+      onEnter: () => {
+        gsap.to(element, {
+          innerHTML: endValue,
+          duration: 2,
+          ease: "power1.out",
+          snap: { innerHTML: stat.value.includes(".") ? 0.1 : 1 },
+        });
+
+        // Trigger animation for all stats only once
+        if (index === stats.length - 1) {
+          setHasAnimated(true);
+        }
+      },
+    });
+
+    triggers.push(trigger);
+  });
+
+  return () => {
+    triggers.forEach((t) => t.kill());
+  };
+}, [hasAnimated]);
+
 
   return (
     <section ref={sectionRef} className="py-24 px-4 bg-white text-black">

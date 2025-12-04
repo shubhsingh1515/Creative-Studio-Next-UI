@@ -78,7 +78,7 @@ export default function HeroCreativeWithVanta() {
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-          color: 0xf71460,
+          color: 0x534e4e,
           backgroundColor: 0x000000,
           spacing: 15,
           maxDistance: 20,
@@ -102,11 +102,11 @@ export default function HeroCreativeWithVanta() {
   -------------------------------------------- */
 
   return (
-    <section
+    <div
       ref={vantaRef}
       className="relative w-full min-h-screen text-white flex items-center px-6 md:px-12 lg:px-20 overflow-hidden"
     >
-      <div className="container bg-black/40 mx-auto flex flex-col lg:flex-row items-center justify-between py-20 mt-10 relative z-10">
+      <div className="container   mx-auto flex flex-col lg:flex-row items-center justify-between py-20 mt-10 relative z-10">
       {/* --- LEFT CONTENT --- */}
       <div className="w-full lg:w-1/2 relative z-10">
 
@@ -199,6 +199,6 @@ export default function HeroCreativeWithVanta() {
       </motion.div>
     </div>
 
-    </section>
+    </div>
   );
 }
