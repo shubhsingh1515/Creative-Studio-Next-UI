@@ -6,7 +6,6 @@ import * as THREE from "three";
 import { Phone } from "lucide-react";
 
 export default function HeroCreativeWithVanta() {
-
   /* -------------------------------------------
      STAR + ARROW ANIMATIONS
   -------------------------------------------- */
@@ -21,7 +20,12 @@ export default function HeroCreativeWithVanta() {
           { transform: "rotate(0deg) scale(1)" },
           { transform: "rotate(360deg) scale(1.15)" },
         ],
-        { duration: 3000, iterations: Infinity, direction: "alternate", easing: "ease-in-out" }
+        {
+          duration: 3000,
+          iterations: Infinity,
+          direction: "alternate",
+          easing: "ease-in-out",
+        }
       );
     }
 
@@ -31,20 +35,15 @@ export default function HeroCreativeWithVanta() {
       arrowRef.current.style.strokeDashoffset = "300";
 
       arrowRef.current.animate(
-        [
-          { strokeDashoffset: "300" },
-          { strokeDashoffset: "0" }
-        ],
+        [{ strokeDashoffset: "300" }, { strokeDashoffset: "0" }],
         { duration: 2000, easing: "ease-out", fill: "forwards" }
       );
 
-      arrowRef.current.animate(
-        [
-          { opacity: 1 },
-          { opacity: 0.4 }
-        ],
-        { duration: 1500, iterations: Infinity, direction: "alternate" }
-      );
+      arrowRef.current.animate([{ opacity: 1 }, { opacity: 0.4 }], {
+        duration: 1500,
+        iterations: Infinity,
+        direction: "alternate",
+      });
     }
   }, []);
 
@@ -66,8 +65,12 @@ export default function HeroCreativeWithVanta() {
       });
 
     async function loadVanta() {
-      await loadScript("https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js");
-      await loadScript("https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js");
+      await loadScript(
+        "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+      );
+      await loadScript(
+        "https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"
+      );
 
       const VANTA = (window as any).VANTA;
 
@@ -107,98 +110,116 @@ export default function HeroCreativeWithVanta() {
       className="relative w-full min-h-screen text-white flex items-center px-6 md:px-12 lg:px-20 overflow-hidden"
     >
       <div className="container   mx-auto flex flex-col lg:flex-row items-center justify-between py-20 mt-10 relative z-10">
-      {/* --- LEFT CONTENT --- */}
-      <div className="w-full lg:w-1/2 relative z-10">
+        {/* --- LEFT CONTENT --- */}
+        <div className="w-full lg:w-1/2 relative z-10">
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-7xl font-bold leading-[1.1]"
+          >
+            A creative{" "}
+            <span ref={starRef} className="inline-block text-lime-400 mx-2 ">
+              *
+            </span>
+            <br />
+            design studio
+          </motion.h1>
 
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-7xl font-bold leading-[1.1]"
-        >
-          A creative{" "}
-          <span ref={starRef} className="inline-block text-lime-400 mx-2 ">
-            *
-          </span>
-          <br />
-          design studio
-        </motion.h1>
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-white mt-6 text-lg max-w-lg"
+          >
+            We're a creative design studio specializing in meeting the needs of
+            the new generation. We offer innovative and cutting-edge design
+            solutions to help our clients stand out.
+          </motion.p>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-white mt-6 text-lg max-w-lg"
-        >
-          We're a creative design studio specializing in meeting the needs of the new generation.
-          We offer innovative and cutting-edge design solutions to help our clients stand out.
-        </motion.p>
+          {/* Social proof */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45 }}
+            className="flex items-center gap-4 mt-8"
+          >
+            <div className="flex -space-x-3">
+              <img
+                src="https://framerusercontent.com/images/xcVsFcFg7M5SkoOkJX5lUfdBUN4.jpg"
+                className="w-10 h-10 rounded-full border-2 border-black"
+              />
+              <img
+                src="	https://framerusercontent.com/images/lyyanOkQwdFqEmTN9vhLsdsi0.jpg"
+                className="w-10 h-10 rounded-full border-2 border-black"
+              />
+              <img
+                src="https://framerusercontent.com/images/a5SO6bWYO9JGc90jHykGK0g78.jpg"
+                className="w-10 h-10 rounded-full border-2 border-black"
+              />
+              <img
+                src="https://framerusercontent.com/images/xcVsFcFg7M5SkoOkJX5lUfdBUN4.jpg"
+                className="w-10 h-10 rounded-full border-2 border-black"
+              />
+              <img
+                src="	https://framerusercontent.com/images/iBem3bM7DskP1qLkV8JoHMLH68.jpg"
+                className="w-10 h-10 rounded-full border-2 border-black"
+              />
+            </div>
 
-        {/* Social proof */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45 }}
-          className="flex items-center gap-4 mt-8"
-        >
-          <div className="flex -space-x-3">
-            <img src="https://framerusercontent.com/images/xcVsFcFg7M5SkoOkJX5lUfdBUN4.jpg" className="w-10 h-10 rounded-full border-2 border-black" />
-            <img src="	https://framerusercontent.com/images/lyyanOkQwdFqEmTN9vhLsdsi0.jpg" className="w-10 h-10 rounded-full border-2 border-black" />
-            <img src="https://framerusercontent.com/images/a5SO6bWYO9JGc90jHykGK0g78.jpg" className="w-10 h-10 rounded-full border-2 border-black" />
-            <img src="https://framerusercontent.com/images/xcVsFcFg7M5SkoOkJX5lUfdBUN4.jpg" className="w-10 h-10 rounded-full border-2 border-black" />
-            <img src="	https://framerusercontent.com/images/iBem3bM7DskP1qLkV8JoHMLH68.jpg" className="w-10 h-10 rounded-full border-2 border-black" />
-          </div>
+            <p className="text-gray-200 text-sm md:text-base">
+              Believed by more than a thousand people
+            </p>
+          </motion.div>
 
-          <p className="text-gray-200 text-sm md:text-base">
-            Believed by more than a thousand people
-          </p>
-        </motion.div>
+          {/* CTA BUTTON + ARROW RIGHT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mt-10 flex items-center gap-4 mb-4"
+          >
+            {/* CTA BUTTON */}
+            <button className="px-4 py-2 bg-white text-black rounded-full flex items-center gap-3 shadow-xl hover:scale-105 transition-all">
+              Book a free consultation
+              <div className="w-9 h-9  flex items-center justify-center rounded-full">
+                <Phone className="w-5 h-5" />
+              </div>
+            </button>
 
-      {/* CTA BUTTON + ARROW RIGHT SIDE */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.6 }}
-  className="mt-10 flex items-center gap-4 mb-4"
+            {/* ARROW IMAGE (next to button) */}
+            <motion.img
+              src="/arrow.svg"
+              className="w-1 md:w-30 animate-bounce"
+              whileHover={{ x: 6, scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            />
+          </motion.div>
+        </div>
+
+        {/* RIGHT IMAGE */}
+     <motion.div
+  initial={{ opacity: 0, scale: 0.9, x: 40 }}
+  animate={{ opacity: 1, scale: 1, x: 0 }}
+  transition={{ delay: 0.4 }}
+  className="lg:w-1/2 relative z-10"
 >
-  {/* CTA BUTTON */}
-  <button className="px-4 py-2 bg-white text-black rounded-full flex items-center gap-3 shadow-xl hover:scale-105 transition-all">
-    Book a free consultation
-    <div className="w-9 h-9  flex items-center justify-center rounded-full">
-      <Phone className="w-5 h-5" />
-    </div>
-  </button>
-
-  {/* ARROW IMAGE (next to button) */}
-  <motion.img
-    src="/arrow.svg"
-    className="w-1 md:w-30 animate-bounce"
-    whileHover={{ x: 6, scale: 1.1 }}
-    transition={{ type: "spring", stiffness: 200 }}
-  />
+  <div className="rounded-3xl overflow-hidden border-[6px] border-lime-200 shadow-2xl">
+    <iframe
+      className="w-full h-[480px]"
+      src="https://www.youtube.com/embed/FsB_nRGdeLs?si=dm8Yp9VrW37vusXa"
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    ></iframe>
+  </div>
 </motion.div>
 
       </div>
-
-      {/* RIGHT IMAGE */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, x: 40 }}
-        animate={{ opacity: 1, scale: 1, x: 0 }}
-        transition={{ delay: 0.4 }}
-        className=" lg:w-1/2 relative z-10"
-      >
-        <div className="rounded-3xl overflow-hidden border-[6px] border-lime-200 shadow-2xl">
-          <img
-            src="/images/car.png"
-            className="w-full h-[480px] object-cover"
-            alt="Creative Team"
-          />
-        </div>
-      </motion.div>
-    </div>
-
     </div>
   );
 }
