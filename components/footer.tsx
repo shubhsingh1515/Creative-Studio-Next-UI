@@ -11,53 +11,53 @@ export function Footer() {
   /* -------------------------------------------
       VANTA HALO EFFECT
   -------------------------------------------- */
-  useEffect(() => {
-    if (vantaEffect) return;
+  // useEffect(() => {
+  //   if (vantaEffect) return;
 
-    const loadScript = (src: string) =>
-      new Promise<void>((resolve) => {
-        const script = document.createElement("script");
-        script.src = src;
-        script.onload = () => resolve();
-        document.body.appendChild(script);
-      });
+  //   const loadScript = (src: string) =>
+  //     new Promise<void>((resolve) => {
+  //       const script = document.createElement("script");
+  //       script.src = src;
+  //       script.onload = () => resolve();
+  //       document.body.appendChild(script);
+  //     });
 
-    async function initVanta() {
-      await loadScript("https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js");
-      await loadScript("https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js");
+  //   async function initVanta() {
+  //     await loadScript("https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js");
+  //     await loadScript("https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js");
 
-      const VANTA = (window as any).VANTA;
+  //     const VANTA = (window as any).VANTA;
 
-      if (!vantaRef.current || vantaEffect) return;
+  //     if (!vantaRef.current || vantaEffect) return;
 
-      const effect = VANTA.HALO({
-        el: vantaRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200,
-        minWidth: 200,
-        scale: 1.0,
-        scaleMobile: 1.0,
+  //     const effect = VANTA.HALO({
+  //       el: vantaRef.current,
+  //       mouseControls: true,
+  //       touchControls: true,
+  //       gyroControls: false,
+  //       minHeight: 200,
+  //       minWidth: 200,
+  //       scale: 1.0,
+  //       scaleMobile: 1.0,
 
-        // ⭐ Customize these to match screenshot
-        backgroundColor: 0x000000,
-        baseColor: 0x000000,
-        size: 1.1,
-        amplitudeFactor: 0.3,
-        xOffset: 0.22,
-        yOffset: -0.26,
-      });
+  //       // ⭐ Customize these to match screenshot
+  //       backgroundColor: 0x000000,
+  //       baseColor: 0x000000,
+  //       size: 1.1,
+  //       amplitudeFactor: 0.3,
+  //       xOffset: 0.22,
+  //       yOffset: -0.26,
+  //     });
 
-      setVantaEffect(effect);
-    }
+  //     setVantaEffect(effect);
+  //   }
 
-    initVanta();
+  //   initVanta();
 
-    return () => {
-      vantaEffect?.destroy();
-    };
-  }, [vantaEffect]);
+  //   return () => {
+  //     vantaEffect?.destroy();
+  //   };
+  // }, [vantaEffect]);
 
   /* -------------------------------------------
       FOOTER UI
@@ -65,7 +65,7 @@ export function Footer() {
 
   return (
     <footer
-      ref={vantaRef}
+      // ref={vantaRef}
       className="relative bg-black text-white pt-28 pb-12 px-6 overflow-hidden"
     >
       {/* CONTENT WRAPPER (keeps text above Vanta) */}

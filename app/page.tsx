@@ -12,20 +12,29 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 import HeroCreative from "@/components/HeroNew"
 import HeroWithVanta from "@/components/ui/Vanta"
+import ProcessSection1 from "@/components/Hero1"
+import ProcessSection2 from "@/components/Hero2"
+
+import CtaNew from "@/components/CtaNew"
+import WhoThisFor from "@/components/WhoThisFor"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* <HeroWithVanta /> */}
-      <Navigation />
-      <HeroCreative />
+      {/* <Navigation /> */}
+      {/* <HeroCreative /> */}
+      <ProcessSection1 />
+      <ProcessSection2 />
+      <WhoThisFor />
       {/* <HeroSection /> */}
-      <AboutSection />
-      <StatsSection />
-      <BenefitsSection />
-      <ProductsSection />
+      {/* <AboutSection /> */}
+      {/* <StatsSection /> */}
+      {/* <BenefitsSection /> */}
+      {/* <ProductsSection /> */}
       <TestimonialsSection />
-      <CTASection />
+      {/* <CTASection /> */}
+      <CtaNew />
       <FAQSection />
       <Footer />
     </div>

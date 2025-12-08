@@ -52,7 +52,7 @@ export function FAQSection() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-4"
         >
-          Any <span className="font-serif italic">Questions?</span>
+          Any <span className="">Questions?</span>
         </motion.h2>
 
         <motion.p
